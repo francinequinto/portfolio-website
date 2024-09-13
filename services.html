@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Final - Services</title>
+    <link rel="stylesheet" href="stylesheets/style2.css">
+    <link rel="stylesheet" href="stylesheets/services.css">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- In your main HTML files -->
+    <div id="navbar"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                const currentPath = window.location.pathname;
+                const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+                const navLinks = document.querySelectorAll('.navbar a');
+
+                navLinks.forEach(link => {
+                    const linkPage = link.getAttribute('href').substring(link.getAttribute('href').lastIndexOf('/') + 1);
+                    if (linkPage === currentPage) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+    </script>
+
+    <!-- services section design -->
+    <section class="services" id="services">
+        <h2 class="heading">my&nbsp<span>services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class='bx bx-search-alt'></i>
+                <h3>ai research</h3>
+                <p>I have substantial experience in developing machine learning models, data analysis, natural language
+                    processing (NLP) solutions, computer vision systems, and predictive analytics. They can also assist
+                    in AI strategy consulting, optimizing algorithms, and creating custom AI solutions tailored to
+                    specific business needs.</p>
+                <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                    target="blank" class="btn">read more</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bx-code-curly'></i>
+                <h3>software engineer</h3>
+                <p>I provide services such as custom software development, system architecture design, web and mobile
+                    app development, database management, API integration, and troubleshooting. They also offer software
+                    optimization, security implementation, and ongoing maintenance to ensure performance and
+                    scalability.</p>
+                <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                    target="blank" class="btn">read more</a>
+            </div>
+            <div class="services-box">
+                <i class='bx bxl-html5'></i>
+                <h3>full stack developer</h3>
+                <p>I am equipped to support you in website design and development, front-end and back-end programming,
+                    website maintenance, performance optimization, and ensuring responsive design for compatibility
+                    across devices, all while focusing on creating user-friendly and efficient digital experiences.</p>
+                <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                    target="blank" class="btn">read more</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer design  -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Francine Quinto | All rights reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#services"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+
+    </footer>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

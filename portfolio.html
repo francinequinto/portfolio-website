@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Final - Services</title>
+    <link rel="stylesheet" href="stylesheets/style2.css">
+    <link rel="stylesheet" href="stylesheets/portfolio.css">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- In your main HTML files -->
+    <div id="navbar"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                const currentPath = window.location.pathname;
+                const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+                const navLinks = document.querySelectorAll('.navbar a');
+
+                navLinks.forEach(link => {
+                    const linkPage = link.getAttribute('href').substring(link.getAttribute('href').lastIndexOf('/') + 1);
+                    if (linkPage === currentPage) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+    </script>
+
+    <!-- portfolio section -->
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">latest <span>projects</span></h2>
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="images/computer-2557299_1280.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>FusionWeb</h4>
+                    <p><b>FusionWeb</b> is a comprehensive platform designed to streamline the development of
+                        scalable, user-centric web applications by integrating advanced front-end and back-end
+                        technologies.</p>
+                    <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                        target="blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/laptop-6062423_1280.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>TechSynergy</h4>
+                    <p><b>TechSynergy</b> is a project focused on integrating diverse technologies to create
+                        seamless, innovative solutions that enhance efficiency and user experience.</p>
+                    <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                        target="blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/startup-594126_1280.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>CognitAI</h4>
+                    <p><b>CognitAI </b>explores advanced artificial intelligence techniques to enhance cognitive
+                        processes and deliver innovative data-driven insights.</p>
+                    <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                        target="blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+            <div class="portfolio-box">
+                <img src="images/web-design-2038872_1280.jpg" alt="">
+
+                <div class="portfolio-layer">
+                    <h4>DevStream</h4>
+                    <p><b>DevStream</b> is a cutting-edge platform designed to streamline software development
+                        workflows, enhance team collaboration, and accelerate project delivery through integrated
+                        tools and real-time communication.</p>
+                    <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                        target="blank"><i class='bx bx-link-external'></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer design  -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Francine Quinto | All rights reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#portfolio"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+
+    </footer>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

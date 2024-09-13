@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Development Final - About</title>
+    <link rel="stylesheet" href="stylesheets/style2.css">
+    <link rel="stylesheet" href="stylesheets/about.css">
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- In your main HTML files -->
+    <div id="navbar"></div>
+
+    <script>
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+                const currentPath = window.location.pathname;
+                const currentPage = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+                const navLinks = document.querySelectorAll('.navbar a');
+
+                navLinks.forEach(link => {
+                    const linkPage = link.getAttribute('href').substring(link.getAttribute('href').lastIndexOf('/') + 1);
+                    if (linkPage === currentPage) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        link.classList.add('active');
+                    }
+                });
+            });
+    </script>
+
+    <!-- about section -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="images/IMG_2793.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">about <span>me</span></h2>
+            <h3>hi, i'm here to help your next project</h3>
+            <p>I'm a full-stack developer with a strong background in web development and AI research. I enjoy building
+                intuitive, high-performing applications that bridge the gap between technology and user experience.
+                Combining technical expertise and a passion for innovation, I focus on delivering efficient solutions
+                that harness the power of both web technologies and AI.</p>
+            <a href="https://docs.google.com/document/d/1fu9mOELyFmLXpqE0l2kY0D_HNrNNswdDs6t2nW-6x8M/edit?usp=sharing"
+                target="blank" class="btn">read more</a>
+        </div>
+    </section>
+
+    <!-- footer design  -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by Francine Quinto | All rights reserved.</p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#about"><i class='bx bx-up-arrow-alt'></i></a>
+        </div>
+
+    </footer>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
